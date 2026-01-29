@@ -2,7 +2,8 @@ import { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 import './App.css';
 
-const socket = io('http://localhost:3000');
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
+const socket = io(API_URL);
 
 function App() {
   const [items, setItems] = useState([]);
@@ -15,7 +16,7 @@ function App() {
   useEffect(() => {
     const clientTimeBeforeFetch = Date.now();
 
-    fetch('http://localhost:3000/items')
+    fetch(`${API_URL}/items`)
       .then(res => res.json())
       .then(data => {
         setItems(data.items);
