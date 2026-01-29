@@ -3,7 +3,10 @@ import io from 'socket.io-client';
 import './App.css';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000';
-const socket = io(API_URL);
+const socket = io(API_URL,{
+  transports: ["websocket"],
+  withCredentials: true
+});
 
 function App() {
   const [items, setItems] = useState([]);
