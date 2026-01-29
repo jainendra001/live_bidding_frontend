@@ -1,42 +1,126 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.username-badge {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+
+.register-container {
+  padding: 40px;
+  max-width: 400px;
+  margin: 100px auto;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.register-container input {
+  padding: 12px;
+  font-size: 16px;
+  width: 100%;
+  margin-bottom: 10px;
+  border: 2px solid #333;
+  border-radius: 4px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.register-container button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.auction-card {
+  border: 2px solid #333;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  background-color: white;
+  position: relative;
 }
 
-.card {
-  padding: 2em;
+.auction-card.expired {
+  background-color: #f0f0f0;
 }
 
-.read-the-docs {
-  color: #888;
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  color: white;
+}
+
+.badge.winning {
+  background-color: #4caf50;
+}
+
+.badge.outbid {
+  background-color: #f44336;
+}
+
+.price {
+  font-size: 32px;
+  font-weight: bold;
+  color: #2a9d2a;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.price.flash {
+  background-color: #90ee90;
+}
+
+.last-bidder {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.timer {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.expired-text {
+  color: #999;
+}
+
+.auction-card button {
+  padding: 12px 24px;
+  font-size: 16px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auction-card button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
